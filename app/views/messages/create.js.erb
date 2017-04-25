@@ -1,0 +1,5 @@
+
+
+<%= publish_to messages_path do %>
+$('#chat_list').append('<%= escape_javascript(render 'append_message', message: @message ) %>');
+<% end %>

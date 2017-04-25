@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Messages</h1>
+
+<div class="chat_area">
+  <ul id='chat_list' class="list-unstyled">
+    <% @messages.each do |m| %>
+      <%= render 'append_message',  message: m  %>
+    <% end %>
+  </ul>
+</div><!--chat_area-->
+
+<br>
+<h1>New Message</h1>
+
+<%= render 'form', message: @message %>
+
+<%= subscribe_to messages_path %>

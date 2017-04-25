@@ -1,0 +1,9 @@
+<div class='row'>
+  <div id='sign_in' class='center-block col-lg-3'>
+    <%= simple_form_for  @user do |f| %>
+        <%= f.input :username %>
+        <%= f.input :dialect, collection: User.dialects.map {|k,v| [k.capitalize, k]}%>
+        <%= f.submit 'Log in' %>
+    <% end %>
+  </div>
+</div>

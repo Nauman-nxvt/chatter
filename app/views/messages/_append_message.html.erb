@@ -1,0 +1,10 @@
+<li class="left clearfix">
+       <span class="chat-img1 pull-left">
+        <%= image_tag  dialect_img_url(message.dialect), class: 'img-circle'  %>
+         <%= message.author %>:
+       </span>
+  <div class="chat-body1 clearfix">
+    <p><%= message.message %></p>
+    <div class="chat_time pull-right"><%= message.created_at %></div>
+  </div>
+</li>
