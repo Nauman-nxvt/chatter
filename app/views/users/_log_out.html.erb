@@ -1,0 +1,5 @@
+<script type='text/javascript'>
+  <% publish_to logout_path do %>
+    $('<%= "#p_#{flash[:user_id]}"%>').remove();
+  <% end %>
+</script>

@@ -1,0 +1,5 @@
+<script type='text/javascript'>
+  <% publish_to logout_path do %>
+    $('#active_users').append('<%= escape_javascript("<p id='p_#{current_user.id}'>#{current_user.username}</p>").html_safe %>');
+  <% end %>
+</script>

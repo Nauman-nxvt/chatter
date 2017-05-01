@@ -1,5 +1,4 @@
 class MessagesController < ApplicationController
-  before_action :auth
 
   # GET /messages
   # GET /messages.json
@@ -12,10 +11,14 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
-
+    # @message.message = Translate::TranslateApi.translate(@message.dialect, @message.message)
+     response = Translate::TranslateApi.translate(@message.dialect, @message.message)
+    @message.message = response[:message]
+    if response[:error]
+      flash[:danger] = response[:error]
+    end
     respond_to do |format|
       if @message.save
-        # format.html { redirect_to index }
         format.js
       else
         format.html { redirect_to index }

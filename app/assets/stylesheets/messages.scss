@@ -1,29 +1,44 @@
 
-.chat_area {
+#chat_area {
   float: left;
   height: 600px;
   overflow-x: hidden;
   overflow-y: auto;
-  width: 100%;
+  width: 70%;
 }
-.chat_area li {
+#chat_area li {
   padding: 14px 14px 0;
 }
-.chat_area li .chat-img1 img {
+#chat_area li .chat-img1 img {
   height: 40px;
   width: 40px;
 }
-.chat_area .chat-body1 {
+#chat_area .chat-body1 {
   margin-left: 50px;
 }
 .chat-body1 p {
   background: #fbf9fa none repeat scroll 0 0;
   padding: 10px;
 }
-.chat_area .admin_chat .chat-body1 {
+#chat_area .chat-body1 {
   margin-left: 0;
   margin-right: 50px;
 }
-.chat_area li:last-child {
+#chat_area li:last-child {
   padding-bottom: 10px;
 }
+
+#active_users{
+  float: right;
+  height: 600px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 20%;
+  border-right: 10px solid darkgrey;
+}
+
+#message{
+  clear:both;
+  margin-top: 650px;
+}
+

@@ -1,5 +1,8 @@
+<% if flash[:danger]%>
+  $('#message').prepend('<%= escape_javascript(render 'error_div', text: flash[:danger] ) %>')
+<% end %>
 
-
-<%= publish_to messages_path do %>
-$('#chat_list').append('<%= escape_javascript(render 'append_message', message: @message ) %>');
+<% publish_to messages_path do %>
+  $('.chat_list').append('<%= escape_javascript(render 'append_message', message: @message ) %>');
+  scroll_bottom();
 <% end %>

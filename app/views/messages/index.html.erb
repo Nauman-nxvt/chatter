@@ -2,17 +2,26 @@
 
 <h1>Messages</h1>
 
-<div class="chat_area">
-  <ul id='chat_list' class="list-unstyled">
+<div id="chat_area">
+  <ul class='chat_list' class="list-unstyled">
     <% @messages.each do |m| %>
       <%= render 'append_message',  message: m  %>
     <% end %>
   </ul>
 </div><!--chat_area-->
 
+<div id='active_users'>
+  <% User.all.each do |u| %>
+     <p id="p_<%=u.id%>"><%= u.username %></p>
+  <% end %>
+</div>
+
 <br>
-<h1>New Message</h1>
+<div id='message'>
+  <h1>New Message</h1>
 
-<%= render 'form', message: @message %>
-
+  <%= render 'form', message: @message %>
+</div>
 <%= subscribe_to messages_path %>
+<%= subscribe_to logout_path %>
+<%= render 'users/new_user' unless flash[:user_id].nil? %>
