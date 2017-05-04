@@ -10,6 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 
 Rails version: Rails 5.0.2
+
 Ruby version:  ruby 2.3.1p112
 
 Install Qt, a dependancy for capybara-webkit gem
@@ -44,7 +45,10 @@ whenever --update-crontab
 ```
 
 
-## Run the thin server for faye before executing application or tests
+## Faye server
+
+Rackup the connection to the Faye server, using the rackup file that the gem generates. In another terminal window in the root directory of your app, run:
+
 ```
 rackup private_pub.ru -s thin -E production
 ```
