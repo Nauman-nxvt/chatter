@@ -5,6 +5,6 @@
        </span>
   <div class="chat-body1 clearfix">
     <p><%= message.message %></p>
-    <div class="chat_time pull-right"><%= message.created_at %></div>
+    <div class="chat_time pull-right"><%= date_format(message.created_at) %></div>
   </div>
 </li>

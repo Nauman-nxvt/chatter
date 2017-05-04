@@ -9,5 +9,5 @@ function scroll_bottom() {
 
     height += '';
 
-    $('#chat_area').animate({scrollTop: height});
+    $('#chat_area').animate({scrollTop: height + 50});
 }

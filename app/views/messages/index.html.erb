@@ -11,6 +11,7 @@
 </div><!--chat_area-->
 
 <div id='active_users'>
+  <h2>Online users</h2>
   <% User.all.each do |u| %>
      <p id="p_<%=u.id%>"><%= u.username %></p>
   <% end %>

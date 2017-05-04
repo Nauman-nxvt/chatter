@@ -2,7 +2,12 @@
   $('#message').prepend('<%= escape_javascript(render 'error_div', text: flash[:danger] ) %>')
 <% end %>
 
-<% publish_to messages_path do %>
-  $('.chat_list').append('<%= escape_javascript(render 'append_message', message: @message ) %>');
-  scroll_bottom();
+<% if @publish %>
+  <% publish_to messages_path do %>
+    $('.chat_list').append('<%= escape_javascript(render 'append_message', message: @message ) %>');
+    scroll_bottom();
+    $('#message_message').val('');
+  <% end %>
+<% else %>
+  $('#message').prepend('<%= escape_javascript(render 'error_div', text: 'Message could not be sent' ) %>')
 <% end %>
