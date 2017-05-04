@@ -1,24 +1,52 @@
-# README
+# Chatter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Chatter is a chat application built in Ruby on rails.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-* System dependencies
+### Prerequisites
 
-* Configuration
 
-* Database creation
+Rails version: Rails 5.0.2
+Ruby version:  ruby 2.3.1p112
 
-* Database initialization
+Install Qt, a dependancy for capybara-webkit gem
 
-* How to run the test suite
+*https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### Installing
 
-* ...
+Initiate a git repo, add remote and pull from git repo:
+
+```
+git init
+git remote add origin git@github.com:Nauman-nxvt/chatter.git 
+git pull origin master
+```
+
+Run bundle
+
+```
+bundle install
+```
+Run migrations
+
+```
+rake db:migrate
+```
+Update crontab, which will run the rake tasks
+```
+whenever --update-crontab
+
+```
+
+
+## Run the thin server for faye before executing application or tests
+```
+rackup private_pub.ru -s thin -E production
+```
+
+
